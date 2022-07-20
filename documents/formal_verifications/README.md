@@ -34,7 +34,7 @@ The Next state transition predicate consists in checking if there exists a QC su
 
 #### Adding TCs
 
-To understand how introducing TCs affects the current setup we tried to summarize the timeout flow presented in the DiemBFT paper into this .
+To understand how introducing TCs affects the current setup we tried to summarize the timeout flow presented in the DiemBFT paper into this:
 
 ```mermaid
 flowchart TD
@@ -53,4 +53,4 @@ Pacemaker -->|returns Option<TC>| OptTC
 OptTC -->|is_some = TC| TCIsSome["advance_round_tc(TC) and process_new_round_event(TC)"]
 ```
 
-This seems a bit extra. However, reading further into the paper you see that the only relevant thing to our model is that in case of receiving a tc you need to update the round number. We also keep track of the latest TC's round for further use.
+This seems a bit extra. However, reading further into the paper you see that the only relevant thing to our model is that in case of receiving a TC you need to update the round number. We also keep track of the latest TC's round for further use.
